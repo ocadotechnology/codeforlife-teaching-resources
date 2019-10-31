@@ -1,0 +1,51 @@
+{
+  "name": "codeforlife-teaching-resources",
+  "private": true,
+  "description": "A site that will generate printable webpages from ",
+  "version": "0.1.0",
+  "author": "Code for Life (@codeforlife-team)",
+  "dependencies": {
+    "gatsby": "^2.15.28",
+    "gatsby-image": "^2.2.23",
+    "gatsby-plugin-manifest": "^2.2.20",
+    "gatsby-plugin-offline": "^3.0.11",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.1.10",
+    "gatsby-plugin-sharp": "^2.2.27",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-filesystem": "^2.1.28",
+    "gatsby-source-prismic-graphql": "^3.4.0-beta.2",
+    "gatsby-transformer-sharp": "^2.2.19",
+    "prismic-reactjs": "^1.1.1",
+    "prop-types": "^15.7.2",
+    "puppeteer": "^1.20.0",
+    "react": "^16.10.0",
+    "react-dom": "^16.10.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.4.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.1.0",
+    "prettier": "^1.18.2",
+    "standard": "^14.3.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "NODE_ENV=development gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

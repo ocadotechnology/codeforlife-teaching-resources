@@ -1,35 +1,43 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://www.codeforlife.education">
+    <img alt="Code for Life" src="https://www.codeforlife.education/static/portal/img/logo_c4l_hexa.png" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Code for Life Teaching Resources
 </h1>
 
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+This repo holds the website we use to generate teaching worksheets. The content is held in a CMS from [Prismic](https://prismic.io/) and we use [Gatsy](https://www.gatsbyjs.org/) to generate the webpages which will turn into worksheets when they are printed.
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+For more infomation on why we are doing this, please the corresponding [feature request on Github](https://github.com/ocadotechnology/codeforlife-portal/issues/1075).
 
-## 🚀 Quick start
+## 🚀 Running the site locally
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+1.  **Clone the repo and install project dependencies**
 
     ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    git clone https://gitlab.ocado.tech/internal-open-source/codeforlife-teaching-resources.git
+    
+    # Installing dependencies here using yarn
+    yarn install
     ```
 
-1.  **Start developing.**
+1. **Get an API key for our Prismic instance**
+
+    Contact @code-for-life on Slack to get an API key and put it in a file called `.env.development`
+
+    ```shell
+    touch .env.development
+    echo "API_KEY=[your_api_key_here] > .env.development"
+    ```
+
+1.  **Start the server**
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-default-starter/
-    gatsby develop
+    cd codeforlife-teaching-resources/
+    yarn start
     ```
 
 1.  **Open the source code and start editing!**
@@ -38,7 +46,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `codeforlife-teaching-resources` directory in your code editor of choice and start editing. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
@@ -52,7 +60,6 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── gatsby-browser.js
     ├── gatsby-config.js
     ├── gatsby-node.js
-    ├── gatsby-ssr.js
     ├── LICENSE
     ├── package-lock.json
     ├── package.json
@@ -74,7 +81,7 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+9.  **`LICENSE`**: codeforlife-teaching-resources is licensed under the APGL-v3 license.
 
 10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
@@ -89,9 +96,3 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->

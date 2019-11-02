@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
+  pathPrefix: "/codeforlife-teaching-resources",
   siteMetadata: {
     title: `Code for Life Teaching Resources`,
     description: `Website for generating teaching worksheets`,

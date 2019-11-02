@@ -5,32 +5,29 @@
  */
 
 // You can delete this file if you're not using it
-// const path = require("path")
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const pages = await graphql(`
-//     {
-//       prismic {
-//         allWorksheets {
-//           edges {
-//             node {
-//               _meta {
-//                 uid
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   `)
-//   const template = path.resolve("src/templates/worksheet.js")
-//   pages.data.prismic.allWorksheets.edges.forEach(edge => {
-//     createPage({
-//       path: `/${edge.node._meta.uid}`,
-//       component: template,
-//       context: {
-//         uid: edge.node._meta.uid,
-//       },
-//     })
-//   })
-// }
+const path = require("path")
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const {data: {allContentfulWorksheet}} = await graphql(`
+    query AllWorksheetIdsQuery {
+      allContentfulWorksheet {
+        edges {
+          node {
+            worksheetTitle
+            contentful_id
+          }
+        }
+      }
+    }
+  `)
+  const template = path.resolve("src/templates/worksheet.js")
+  allContentfulWorksheet.edges.forEach(worksheet => {
+    createPage({
+      path: `/${worksheet.node.contentful_id}`,
+      component: template,
+      context: {
+        contentful_id: worksheet.node.contentful_id,
+      },
+    })
+  })
+}

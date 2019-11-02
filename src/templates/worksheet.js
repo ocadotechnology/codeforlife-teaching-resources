@@ -8,20 +8,31 @@ import Title from "../components/title"
 import sliceToComponent from "../sliceToComponent"
 
 export const query = graphql`
-  query WorksheetQuery($uid: String!) {
-    prismic {
-      worksheet(uid: $uid, lang: "en-gb") {
-        worksheet_title
-        resource_section
-        body {
-          ... on PRISMIC_WorksheetBodySubheading {
+  query WorksheetQuery($contentful_id: String!) {
+    contentfulWorksheet(contentful_id: {eq: $contentful_id}) {
+      worksheetTitle,
+      resourceSection
+      content {
+        ... on ContentfulSubheading {
+          name
+          internal {
             type
-            primary {
-              subheading
+          }
+        }
+        ... on Contentful2ColumnLayout {
+          internal {
+            type
+          }
+          heading {
+            ... on ContentfulSubheading {
+              name
             }
           }
-          ... on PRISMIC_WorksheetBody2_column_layout {
-            type
+          leftColumn {
+            json
+          }
+          rightColumn {
+            json
           }
         }
       }
@@ -29,20 +40,21 @@ export const query = graphql`
   }
 `
 
-const Worksheet = ({data: {prismic}}) => {
-  if (prismic.worksheet === null) {
+const Worksheet = ({data : {contentfulWorksheet}}) => {
+  if (contentfulWorksheet === null) {
     return (<></>)
   }
   return (
-    <Layout resourceSectionName={prismic.worksheet.resource_section[0].text}>
+    <Layout resourceSectionName={contentfulWorksheet.resourceSection}>
       <SEO title="Home" />
-      <Title title={prismic.worksheet.worksheet_title[0].text} />
-      {prismic.worksheet.body.map(sliceToComponent)}
+      <Title title={contentfulWorksheet.worksheetTitle} />
+      {contentfulWorksheet.content.map(sliceToComponent)}
     </Layout>
   )
 }
 
-// Worksheet.query = query
+
+Worksheet.query = query
 
 export default Worksheet
 

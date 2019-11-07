@@ -6,7 +6,6 @@ import AuthenticationStatus from "../components/authenticationStatus"
 
 
 const IndexPage = () => {
-  const { login, isAuthenticated } = useAuth()
   const { allContentfulWorksheet } = useStaticQuery(
     graphql`
       query AllWorksheetIdsQuery {

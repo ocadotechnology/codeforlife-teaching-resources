@@ -22,7 +22,7 @@ export const wrapRootElement = ({ element }) => {
       navigate={navigate}
       auth0_domain="codeforlife.eu.auth0.com"
       auth0_client_id="sY4vn9OrpfMWxK6BqXsW2PWL1ln60G6Z"
-      params={{
+      auth0_params={{
         callback_domain,
         redirectUri
       }}

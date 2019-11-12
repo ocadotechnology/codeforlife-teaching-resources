@@ -3,7 +3,6 @@ import { useAuth } from "react-use-auth"
 import { Link } from "gatsby"
 
 
-
 const PrivateLink = ({ to, children }) => {
   const { login, logout, isAuthenticated } = useAuth()
   if (!isAuthenticated()) {

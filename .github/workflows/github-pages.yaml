@@ -3,17 +3,13 @@ name: Gatsby Publish
 on:
   push:
     branches:
-      - setup_github_pages
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Print test secret
-        run: echo ${TEST_SECRET}
-        env:
-          TEST_SECRET: ${{ secrets.TEST_SECRET }}
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
           access-token: ${{ secrets.ACCESS_TOKEN }}

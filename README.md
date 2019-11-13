@@ -7,7 +7,7 @@
   Code for Life Teaching Resources
 </h1>
 
-This repo holds the website we use to generate teaching worksheets. The content is held in a CMS from [Prismic](https://prismic.io/) and we use [Gatsy](https://www.gatsbyjs.org/) to generate the webpages which will turn into worksheets when they are printed.
+This repo holds the website we use to generate teaching worksheets. The content is held in a CMS from [Contentful](https://www.contentful.com/) and we use [Gatsy](https://www.gatsbyjs.org/) to generate the webpages which will turn into worksheets when they are printed.
 
 For more infomation on why we are doing this, please the corresponding [feature request on Github](https://github.com/ocadotechnology/codeforlife-portal/issues/1075).
 
@@ -22,13 +22,13 @@ For more infomation on why we are doing this, please the corresponding [feature 
     yarn install
     ```
 
-1. **Get an API key for our Prismic instance**
+1. **Get an API key for our Contentful instance**
 
     Contact @code-for-life on Slack to get an API key and put it in a file called `.env.development`
 
     ```shell
     touch .env.development
-    echo "API_KEY=[your_api_key_here] > .env.development"
+    echo "CONTENTFUL_ACCESS_TOKEN=[your_api_key_here] > .env.development"
     ```
 
 1.  **Start the server**

@@ -1,10 +1,11 @@
 {
   "name": "codeforlife-teaching-resources",
   "private": true,
-  "description": "A site that will generate printable webpages from ",
-  "version": "0.1.1",
+  "description": "A site that will generate printable webpages backed by a CMS",
+  "version": "0.2.0",
   "author": "Code for Life (@codeforlife-team)",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "gatsby": "^2.15.28",
     "gatsby-image": "^2.2.23",
     "gatsby-plugin-manifest": "^2.2.20",
@@ -13,15 +14,18 @@
     "gatsby-plugin-react-helmet": "^3.1.10",
     "gatsby-plugin-sharp": "^2.2.27",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-contentful": "^2.1.54",
     "gatsby-source-filesystem": "^2.1.28",
     "gatsby-source-prismic-graphql": "^3.4.0-beta.2",
     "gatsby-transformer-sharp": "^2.2.19",
+    "gh-pages": "^2.1.1",
     "prismic-reactjs": "^1.1.1",
     "prop-types": "^15.7.2",
     "puppeteer": "^1.20.0",
     "react": "^16.10.0",
     "react-dom": "^16.10.0",
     "react-helmet": "^5.2.1",
+    "react-use-auth": "^0.5.0",
     "styled-components": "^4.4.0"
   },
   "devDependencies": {
@@ -39,13 +43,14 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/ocadotechnology/codeforlife-teaching-resources"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/ocadotechnology/codeforlife-teaching-resources/issues"
   }
 }

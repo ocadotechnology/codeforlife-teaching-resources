@@ -1,21 +1,19 @@
 import React from "react"
+import { useAuth } from "react-use-auth"
 import { useStaticQuery, graphql } from "gatsby"
+import PrivateLink from "../components/privateLink"
+import AuthenticationStatus from "../components/authenticationStatus"
 
-import { Link } from "gatsby"
 
 const IndexPage = () => {
-  const {prismic: {allWorksheets}} = useStaticQuery(
+  const { allContentfulWorksheet } = useStaticQuery(
     graphql`
-      query AllWorksheetUidsQuery {
-        prismic {
-          allWorksheets {
-            edges {
-              node {
-                worksheet_title
-                _meta {
-                  uid
-                }
-              }
+      query AllWorksheetIdsQuery {
+        allContentfulWorksheet {
+          edges {
+            node {
+              worksheetTitle
+              contentful_id
             }
           }
         }
@@ -23,15 +21,20 @@ const IndexPage = () => {
     `
   )
 
-  const worksheetLinks = allWorksheets.edges.map(worksheet => (
-    <li key={worksheet.node._meta.uid}>
-      <Link to={`/${worksheet.node._meta.uid}`}>
-        {worksheet.node.worksheet_title[0].text}
-      </Link>
+  const worksheetLinks = allContentfulWorksheet.edges.map(worksheet => (
+    <li key={worksheet.node.contentful_id}>
+      <PrivateLink to={`/${worksheet.node.contentful_id}`}>
+        {worksheet.node.worksheetTitle}
+      </PrivateLink>
     </li>
   ))
 
-  return <ul>{worksheetLinks}</ul>
+  return (
+    <>
+      <AuthenticationStatus />
+      <ul>{worksheetLinks}</ul>
+    </>
+  )
 }
 
 export default IndexPage

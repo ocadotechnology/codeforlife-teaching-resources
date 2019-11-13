@@ -3,6 +3,7 @@ require("dotenv").config({
 })
 
 module.exports = {
+  pathPrefix: "/codeforlife-teaching-resources",
   siteMetadata: {
     title: `Code for Life Teaching Resources`,
     description: `Website for generating teaching worksheets`,
@@ -43,18 +44,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-prismic-graphql`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        path: '/preview',
-        previews: true,
-        repositoryName: `kuronoresources`,
-        accessToken: `${process.env.API_KEY}`,
-        pages: [{
-          type: 'Worksheet',
-          match: '/:uid',
-          path: '/worksheet-preview',
-          component: require.resolve('./src/templates/worksheet.js')
-        }]
+        spaceId: `x5ignlfoflka`,
+        accessToken: `${process.env.CONTENTFUL_ACCESS_TOKEN}`,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

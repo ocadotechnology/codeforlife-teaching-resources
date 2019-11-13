@@ -25,9 +25,9 @@ const StyledSubHeading = styled.h2`
   letter-spacing: 0.02ch;
 `
 
-const SubHeading = ({primary: {subheading}}) => (
+const SubHeading = ({name}) => (
   <SubHeadingBox>
-    <StyledSubHeading>{subheading}</StyledSubHeading>
+    <StyledSubHeading>{name}</StyledSubHeading>
   </SubHeadingBox>
 )
 

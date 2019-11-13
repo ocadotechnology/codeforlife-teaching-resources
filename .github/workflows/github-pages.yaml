@@ -10,10 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: enriikke/gatsby-gh-pages-action@v2
-        with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: gh-pages
-          gatsby-args: --prefix-paths
-        # env:
-        #   CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      - name: Print test secret
+        run: echo ${TEST_SECRET}
+        env:
+          TEST_SECRET: ${{ secrets.TEST_SECRET }}
+      # - uses: enriikke/gatsby-gh-pages-action@v2
+      #   with:
+      #     access-token: ${{ secrets.ACCESS_TOKEN }}
+      #     deploy-branch: gh-pages
+      #     gatsby-args: --prefix-paths
+      #   env:
+      #     CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}

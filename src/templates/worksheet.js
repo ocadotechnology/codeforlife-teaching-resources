@@ -15,14 +15,13 @@ export const query = graphql`
       content {
         ... on ContentfulSubheading {
           name
-          internal {
-            type
+        }
+        ... on ContentfulFullWidthText {
+          content {
+            json
           }
         }
         ... on Contentful2ColumnLayout {
-          internal {
-            type
-          }
           heading {
             ... on ContentfulSubheading {
               name

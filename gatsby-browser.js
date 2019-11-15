@@ -9,10 +9,10 @@ import React from "react"
 import { navigate } from "gatsby"
 import { AuthProvider } from "react-use-auth"
 
-const callback_domain =
-        typeof window !== "undefined"
-            ? `${window.location.protocol}//${window.location.host}/codeforlife-teaching-resources`
-            : "http://localhost:8000"
+const callback_domain = 
+  window.location.host.includes('localhost')
+    ? "http://localhost:8000"
+    : `${window.location.protocol}//${window.location.host}/codeforlife-teaching-resources`
 
 const redirectUri = `${callback_domain}/auth0_callback`
 

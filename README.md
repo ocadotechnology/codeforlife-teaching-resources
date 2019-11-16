@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.codeforlife.education">
-    <img alt="Code for Life" src="https://www.codeforlife.education/static/portal/img/logo_c4l_hexa.png" />
+    <img alt="Code for Life" src="https://pbs.twimg.com/profile_images/895959156770951169/e3mcfqLz_200x200.jpg" />
   </a>
 </p>
 <h1 align="center">

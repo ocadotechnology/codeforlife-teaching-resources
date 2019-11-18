@@ -1,5 +1,4 @@
 import React from "react"
-import { useAuth } from "react-use-auth"
 import { useStaticQuery, graphql } from "gatsby"
 import PrivateLink from "../components/privateLink"
 import AuthenticationStatus from "../components/authenticationStatus"

@@ -14,6 +14,8 @@ import Header, { HeaderHeight } from "./header"
 
 export const HeaderBottomSpacing = "40px"
 
+const FooterSpacing = "40px"
+
 const Page = styled.table`
   background: white;
   width: 100%;
@@ -27,6 +29,10 @@ const Content = styled.main`
 
 const HeaderSpace = styled.div`
   height: calc(${props => props.headerHeight} + ${props => props.topMargin} + ${_ => HeaderBottomSpacing});
+`
+
+const FooterSpace = styled.div`
+  height: ${props => props.footerSpacing};
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -71,17 +77,11 @@ const Layout = ({ children, leftAndRightMargin, topAndBottomMargin, resourceSect
         <tfoot>
           <tr>
             <td>
-              <HeaderSpace 
-                headerHeight={HeaderHeight}
-                topMargin={topAndBottomMargin} />
+              <FooterSpace footerSpacing={FooterSpacing} />
             </td>
           </tr>
         </tfoot>
-        {/* <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer> */}
+
       </Page>
     </>
   )

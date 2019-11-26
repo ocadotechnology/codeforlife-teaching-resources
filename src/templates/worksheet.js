@@ -9,8 +9,8 @@ import sliceToComponent from "../sliceToComponent"
 
 export const query = graphql`
   query WorksheetQuery($contentful_id: String!) {
-    contentfulWorksheet(contentful_id: {eq: $contentful_id}) {
-      worksheetTitle,
+    contentfulWorksheet(contentful_id: { eq: $contentful_id }) {
+      worksheetTitle
       resourceSection
       content {
         ... on ContentfulSubheading {
@@ -34,14 +34,22 @@ export const query = graphql`
             json
           }
         }
+        ... on ContentfulTable {
+          tableName
+          tableData {
+            internal {
+              content
+            }
+          }
+        }
       }
     }
   }
 `
 
-const Worksheet = ({data : {contentfulWorksheet}}) => {
+const Worksheet = ({ data: { contentfulWorksheet } }) => {
   if (contentfulWorksheet === null) {
-    return (<></>)
+    return <></>
   }
   return (
     <Layout resourceSectionName={contentfulWorksheet.resourceSection}>
@@ -52,8 +60,6 @@ const Worksheet = ({data : {contentfulWorksheet}}) => {
   )
 }
 
-
 Worksheet.query = query
 
 export default Worksheet
-

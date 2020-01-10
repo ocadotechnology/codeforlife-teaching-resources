@@ -7,7 +7,7 @@
   Code for Life Teaching Resources
 </h1>
 
-This repo holds the website we use to generate teaching worksheets. The content is held in a CMS from [Contentful](https://www.contentful.com/) and we use [Gatsy](https://www.gatsbyjs.org/) to generate the webpages which will turn into worksheets when they are printed.
+This repo holds the website we use to generate teaching worksheets. The content is held in a CMS from [Contentful](https://www.contentful.com/) and we use [Gatsby](https://www.gatsbyjs.org/) to generate the webpages which will turn into worksheets when they are printed.
 
 For more infomation on why we are doing this, please the corresponding [feature request on Github](https://github.com/ocadotechnology/codeforlife-portal/issues/1075).
 
@@ -16,7 +16,7 @@ For more infomation on why we are doing this, please the corresponding [feature 
 1.  **Clone the repo and install project dependencies**
 
     ```shell
-    git clone https://gitlab.ocado.tech/internal-open-source/codeforlife-teaching-resources.git
+    git clone https://github.com/ocadotechnology/codeforlife-teaching-resources.git
     
     # Installing dependencies here using yarn
     yarn install

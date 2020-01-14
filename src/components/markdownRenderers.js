@@ -3,15 +3,20 @@ import styled from "styled-components"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
+const StyledCode = styled(SyntaxHighlighter)`
+  font-size: 1.2vw;
+  page-break-inside: avoid;
+`
+
 const code = ({ value }) => {
   return (
-    <SyntaxHighlighter
+    <StyledCode
       language="python"
-      style={{ ...atomDark, fontSize: "0.9em" }}
+      style={atomDark}
       showLineNumbers
     >
       {value}
-    </SyntaxHighlighter>
+    </StyledCode>
   )
 }
 const inlineCode = styled.code`

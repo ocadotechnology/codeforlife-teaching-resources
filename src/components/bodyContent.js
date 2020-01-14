@@ -11,6 +11,7 @@ export const documentToReactComponentsOptions = {
 
 const BodyContent = styled.div`
   font-family: 'Source Sans Pro';
+  font-size: 0.9em;
   padding-left: 20px;
   padding-right: 20px;
 `

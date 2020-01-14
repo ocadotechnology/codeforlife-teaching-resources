@@ -14,27 +14,31 @@ export const query = graphql`
       resourceSection
       content {
         ... on ContentfulSubheading {
+          __typename
           name
         }
         ... on ContentfulFullWidthText {
+          __typename
           content {
-            json
+            content
           }
         }
         ... on Contentful2ColumnLayout {
+          __typename
           heading {
             ... on ContentfulSubheading {
               name
             }
           }
           leftColumn {
-            json
+            leftColumn
           }
           rightColumn {
-            json
+            rightColumn
           }
         }
         ... on ContentfulTable {
+          __typename
           tableName
           tableData {
             internal {

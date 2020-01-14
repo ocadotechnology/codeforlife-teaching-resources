@@ -1,13 +1,16 @@
 import React from "react"
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
-import BodyContent, { documentToReactComponentsOptions } from './bodyContent'
+import BodyContent from "./bodyContent"
+import ReactMarkdown from "react-markdown"
+import markdownRenderers from "./markdownRenderers"
 
 const FullWidthText = info => {
-  
   return (
-      <BodyContent>
-          {documentToReactComponents(info.content.json, documentToReactComponentsOptions)}
-      </BodyContent>
+    <BodyContent>
+      <ReactMarkdown
+        source={info.content.content}
+        renderers={markdownRenderers}
+      />
+    </BodyContent>
   )
 }
 

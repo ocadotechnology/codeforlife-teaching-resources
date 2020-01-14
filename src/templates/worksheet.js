@@ -31,10 +31,10 @@ export const query = graphql`
             }
           }
           leftColumn {
-            json
+            leftColumn
           }
           rightColumn {
-            json
+            rightColumn
           }
         }
         ... on ContentfulTable {

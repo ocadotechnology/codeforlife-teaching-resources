@@ -1,6 +1,7 @@
 name: Gatsby Publish
 
 on:
+  deployment:
   push:
     branches:
       - master

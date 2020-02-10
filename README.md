@@ -22,13 +22,15 @@ For more infomation on why we are doing this, please the corresponding [feature 
     yarn install
     ```
 
-1. **Get an API key for our Contentful instance**
+1. **Get an API key for our Contentful instance and Puppeteer credentials**
 
-    Contact @code-for-life on Slack to get an API key and put it in a file called `.env.development`
+    Contact @code-for-life on Slack to get an API key for the Contentful instance and Auth0 credentials for Puppeteer, and put them in a file called `.env.development`
 
     ```shell
     touch .env.development
-    echo "CONTENTFUL_ACCESS_TOKEN=[your_api_key_here] > .env.development"
+    echo "CONTENTFUL_ACCESS_TOKEN=[your_contentful_api_key_here]" > .env.development
+    echo "PUPPETEER_USERNAME=[your_puppeteer_username_here]" > .env.development
+    echo "PUPPETEER_PASSWORD=[your_puppeteer_password_here]" > .env.development
     ```
 
 1.  **Start the server**

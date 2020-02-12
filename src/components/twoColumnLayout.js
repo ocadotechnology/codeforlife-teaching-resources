@@ -13,6 +13,17 @@ const TwoColumns = styled.div`
 `
 
 const TwoColumnLayout = info => {
+  let rightColumn = <></>
+  if (info.rightColumn !== null) {
+    rightColumn = (
+      <div>
+        <ReactMarkdown
+          source={info.rightColumn.rightColumn}
+          renderers={markdownRenderers}
+        />
+      </div>
+    )
+  }
   return (
     <section>
       <SubHeading name={info.heading.name} />
@@ -24,12 +35,7 @@ const TwoColumnLayout = info => {
               renderers={markdownRenderers}
             />
           </div>
-          <div>
-            <ReactMarkdown
-              source={info.rightColumn.rightColumn}
-              renderers={markdownRenderers}
-            />
-          </div>
+          {rightColumn}
         </TwoColumns>
       </BodyContent>
     </section>

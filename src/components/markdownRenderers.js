@@ -8,13 +8,13 @@ const StyledCode = styled(SyntaxHighlighter)`
   page-break-inside: avoid;
 `
 
+const StyledImage = styled.img`
+  width: 100%;
+`
+
 const code = ({ value }) => {
   return (
-    <StyledCode
-      language="python"
-      style={atomDark}
-      showLineNumbers
-    >
+    <StyledCode language="python" style={atomDark} showLineNumbers>
       {value}
     </StyledCode>
   )
@@ -25,7 +25,10 @@ const inlineCode = styled.code`
   font-weight: bold;
 `
 
+const image = ({ alt, src }) => <StyledImage alt={alt} src={src} />
+
 export default {
   code,
   inlineCode,
+  image,
 }

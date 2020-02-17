@@ -14,7 +14,7 @@ const TwoColumns = styled.div`
 
 const renderSubheading = subheading => {
   if (subheading) {
-    return (<SubHeading name={subheading} />)
+    return (<SubHeading name={subheading.name} />)
   }
 }
 
@@ -32,7 +32,7 @@ const TwoColumnLayout = info => {
   }
   return (
     <section>
-      {renderSubheading(info.heading.name)}
+      {renderSubheading(info.heading)}
       <BodyContent>
         <TwoColumns>
           <div>

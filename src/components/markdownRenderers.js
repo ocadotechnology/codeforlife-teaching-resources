@@ -18,14 +18,25 @@ const blockquote = styled.blockquote`
   padding: 1em;
   margin: 0.5em 0px;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-block-start: 0em;
   }
 `
 
-const code = ({ value }) => {
+const code = ({value, language}) => {
+  const computedLanguage = language ?? "python"
   return (
-    <StyledCode language="python" style={atomDark} showLineNumbers>
+    <StyledCode
+      language={computedLanguage}
+      style={atomDark}
+      showLineNumbers={computedLanguage !== "console"}
+      wrapLines
+    >
       {value}
     </StyledCode>
   )

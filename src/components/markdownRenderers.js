@@ -12,6 +12,17 @@ const StyledImage = styled.img`
   width: 100%;
 `
 
+const blockquote = styled.blockquote`
+  background-color: #ffe2b3;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin: 0.5em 0px;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-block-start: 0em;
+  }
+`
+
 const code = ({ value }) => {
   return (
     <StyledCode language="python" style={atomDark} showLineNumbers>
@@ -31,4 +42,5 @@ export default {
   code,
   inlineCode,
   image,
+  blockquote,
 }

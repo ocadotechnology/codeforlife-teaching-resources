@@ -12,6 +12,12 @@ const TwoColumns = styled.div`
   font-family: "Source Sans Pro";
 `
 
+const renderSubheading = subheading => {
+  if (subheading) {
+    return (<SubHeading name={subheading} />)
+  }
+}
+
 const TwoColumnLayout = info => {
   let rightColumn = <></>
   if (info.rightColumn !== null) {
@@ -26,7 +32,7 @@ const TwoColumnLayout = info => {
   }
   return (
     <section>
-      <SubHeading name={info.heading.name} />
+      {renderSubheading(info.heading.name)}
       <BodyContent>
         <TwoColumns>
           <div>

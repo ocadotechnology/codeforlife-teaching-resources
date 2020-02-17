@@ -3,8 +3,11 @@ import styled from "styled-components"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 
+let atomDarkModified = JSON.parse(JSON.stringify(atomDark))
+atomDarkModified['code[class*="language-"]'].whiteSpace = 'pre-wrap';
+
 const StyledCode = styled(SyntaxHighlighter)`
-  font-size: 1.2vw;
+  font-size: 0.65em;
   page-break-inside: avoid;
 `
 
@@ -17,6 +20,7 @@ const blockquote = styled.blockquote`
   border-radius: 0.3em;
   padding: 1em;
   margin: 0.5em 0px;
+  page-break-inside: avoid;
 
   h1,
   h2,
@@ -33,7 +37,7 @@ const code = ({value, language}) => {
   return (
     <StyledCode
       language={computedLanguage}
-      style={atomDark}
+      style={atomDarkModified}
       showLineNumbers={computedLanguage !== "console"}
       wrapLines
     >

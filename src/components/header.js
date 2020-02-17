@@ -18,10 +18,10 @@ const HeaderLayout = styled.div`
   position: fixed;
   top: ${props => props.topMargin};
   left: calc(${props => props.sideMargin} + 1px);
-  `
+`
 
 const Heading = styled.h2`
-  font-family: 'Source Sans Pro';
+  font-family: "Source Sans Pro";
   font-size: 25px;
   margin: 0;
   letter-spacing: 0.02ch;
@@ -32,13 +32,10 @@ const Logo = styled.img`
   width: 250px;
 `
 
-const Header = ({worksheetTitle, topMargin, sideMargin}) => (
-  <HeaderLayout 
-    topMargin={topMargin} 
-    sideMargin={sideMargin}
-  >
+const Header = ({ worksheetTitle, topMargin, sideMargin }) => (
+  <HeaderLayout topMargin={topMargin} sideMargin={sideMargin}>
     <Logo src={logo} alt="Logo" />
-    <Heading>Intermediate Python</Heading>
+    <Heading>{worksheetTitle}</Heading>
   </HeaderLayout>
 )
 
@@ -49,7 +46,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  worksheetTitle: 'Worksheet Title'
+  worksheetTitle: "Worksheet Title",
 }
 
 export default Header

@@ -12,6 +12,10 @@ const TwoColumns = styled.div`
   font-family: "Source Sans Pro";
 `
 
+const StyledTwoColumnLayout = styled.section`
+  page-break-inside: avoid;
+`
+
 const renderSubheading = subheading => {
   if (subheading) {
     return (<SubHeading name={subheading.name} />)
@@ -31,7 +35,7 @@ const TwoColumnLayout = info => {
     )
   }
   return (
-    <section>
+    <StyledTwoColumnLayout>
       {renderSubheading(info.heading)}
       <BodyContent>
         <TwoColumns>
@@ -44,7 +48,7 @@ const TwoColumnLayout = info => {
           {rightColumn}
         </TwoColumns>
       </BodyContent>
-    </section>
+    </StyledTwoColumnLayout>
   )
 }
 

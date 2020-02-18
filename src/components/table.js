@@ -9,6 +9,7 @@ const StyledTable = styled.table`
   border-collapse: separate;
   border-spacing: 2em 0.5em;
   margin-left: -2em;
+  page-break-inside: avoid;
 `
 
 const StyledTableHeading = styled.th`

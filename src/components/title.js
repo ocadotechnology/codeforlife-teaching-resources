@@ -2,6 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { HeaderBottomSpacing } from "../components/layout"
+import logo from "../images/cfl-logo.svg"
+
+const TitleLayout = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`
 
 const TitleBox = styled.section`
   width: 100%;
@@ -12,8 +19,7 @@ const TitleBox = styled.section`
   margin-top: calc(-${_ => HeaderBottomSpacing} - 3px);
   box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
 `
 
 const TitleContent = styled.h1`
@@ -33,6 +39,12 @@ const SubtitleContent = styled.h1`
   margin-top: -0.4em;
 `
 
+const Logo = styled.img`
+  height: 140px;
+  width: 140px;
+  transform: translateY(-60px)
+`
+
 const renderSubtitle = subtitle => {
   if (subtitle) {
     return <SubtitleContent>{subtitle}</SubtitleContent>
@@ -41,8 +53,11 @@ const renderSubtitle = subtitle => {
 
 const Title = ({ title, subtitle }) => (
   <TitleBox>
-    <TitleContent>{title}</TitleContent>
-    {renderSubtitle(subtitle)}
+    <TitleLayout>
+      <TitleContent>{title}</TitleContent>
+      {renderSubtitle(subtitle)}
+    </TitleLayout>
+    <Logo src={logo} alt="Logo" />
   </TitleBox>
 )
 

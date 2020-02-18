@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import logo from "../images/cfl-logo-horizontal.svg"
 
 export const HeaderHeight = "60px"
 
@@ -22,19 +21,14 @@ const HeaderLayout = styled.div`
 
 const Heading = styled.h2`
   font-family: "Source Sans Pro";
+  font-weight: 400;
   font-size: 25px;
   margin: 0;
-  letter-spacing: 0.02ch;
-`
-
-const Logo = styled.img`
-  height: auto;
-  width: 250px;
+  letter-spacing: 0.03ch;
 `
 
 const Header = ({ worksheetTitle, topMargin, sideMargin }) => (
   <HeaderLayout topMargin={topMargin} sideMargin={sideMargin}>
-    <Logo src={logo} alt="Logo" />
     <Heading>{worksheetTitle}</Heading>
   </HeaderLayout>
 )

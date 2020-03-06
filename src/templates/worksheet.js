@@ -1,5 +1,4 @@
 import React from "react"
-import WebFont from "webfontloader"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,12 +6,6 @@ import { graphql } from "gatsby"
 import Title from "../components/title"
 
 import sliceToComponent from "../sliceToComponent"
-
-WebFont.load({
-  typekit: {
-    id: "mrl4ieu",
-  },
-})
 
 export const query = graphql`
   query WorksheetQuery($contentful_id: String!) {

@@ -19,6 +19,11 @@ export const query = graphql`
         }
         ... on ContentfulFullWidthText {
           __typename
+          heading {
+            ... on ContentfulSubheading {
+              name
+            }
+          }
           content {
             content
           }

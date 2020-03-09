@@ -12,8 +12,8 @@ const renderSubheading = subheading => {
 
 const FullWidthText = info => {
   return (
-    {renderSubheading(info.heading)}
     <BodyContent>
+      {renderSubheading(info.heading)}
       <ReactMarkdown
         source={info.content.content}
         renderers={markdownRenderers}

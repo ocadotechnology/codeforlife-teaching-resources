@@ -1,8 +1,13 @@
 import React from "react"
+import styled from 'styled-components'
 import SubHeading from "./subheading"
 import BodyContent from "./bodyContent"
 import ReactMarkdown from "react-markdown"
 import markdownRenderers from "./markdownRenderers"
+
+const StyledFullWidthText = styled.section`
+  page-break-inside: avoid;
+`
 
 const renderSubheading = subheading => {
   if (subheading) {
@@ -12,7 +17,7 @@ const renderSubheading = subheading => {
 
 const FullWidthText = info => {
   return (
-    <>
+    <StyledFullWidthText>
       {renderSubheading(info.heading)}
       <BodyContent>
         <ReactMarkdown
@@ -20,7 +25,7 @@ const FullWidthText = info => {
           renderers={markdownRenderers}
         />
       </BodyContent>
-    </>
+    </StyledFullWidthText>
   )
 }
 

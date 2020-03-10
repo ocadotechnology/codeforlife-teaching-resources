@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import BodyContent from "./bodyContent"
-import ReactMarkdown from "react-markdown"
-import markdownRenderers from "./markdownRenderers"
+import React from 'react'
+import styled from 'styled-components'
+import BodyContent from './bodyContent'
+import ReactMarkdown from 'react-markdown'
+import markdownRenderers from './markdownRenderers'
 
 const StyledTable = styled.table`
   width: calc(100% + 4em);
@@ -16,6 +16,7 @@ const StyledTableHeading = styled.th`
   text-align: left;
   padding-bottom: 0.5em;
   border-bottom: 2px solid #e17b2b;
+  font-weight: normal;
 `
 
 const StyledTableCell = styled.td`
@@ -26,8 +27,8 @@ const StyledTableCell = styled.td`
 
 const Table = ({
   tableData: {
-    internal: { content },
-  },
+    internal: { content }
+  }
 }) => {
   const tableContent = JSON.parse(content).table
   const columnWidth = 100 / tableContent.header.length
@@ -41,7 +42,7 @@ const Table = ({
                 <ReactMarkdown
                   source={heading}
                   renderers={markdownRenderers}
-                  disallowedTypes={["paragraph"]}
+                  disallowedTypes={['paragraph']}
                   unwrapDisallowed
                 />
               </StyledTableHeading>
@@ -56,7 +57,7 @@ const Table = ({
                   <ReactMarkdown
                     source={cell}
                     renderers={markdownRenderers}
-                    disallowedTypes={["paragraph"]}
+                    disallowedTypes={['paragraph']}
                     unwrapDisallowed
                   />
                 </StyledTableCell>

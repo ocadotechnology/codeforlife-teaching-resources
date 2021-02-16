@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{FAeX:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),c=n.n(a),i=n("+NMY");t.default=function(){var e=Object(i.b)().handleAuthentication;return Object(a.useEffect)((function(){e()}),[e]),c.a.createElement("h1",null,"This is the auth callback page, you should be redirected immediately.")}}}]);
+//# sourceMappingURL=component---src-pages-auth-0-callback-js-0ab0e09a4b8d858c2434.js.map

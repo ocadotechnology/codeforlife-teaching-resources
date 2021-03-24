@@ -36,7 +36,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: [`Baloo`],
+          families: [`Source Sans Pro`, `Baloo`],
         },
         typekit: {
           id: 'mrl4ieu'

@@ -14,7 +14,7 @@ async function generatePDFFromLink(page, title, link) {
     .goto(link, { waitUntil: 'networkidle0', timeout: 3000 })
     .catch(() => { })
   await page.pdf({
-    path: `pdfs/${filename}.pdf`,
+    path: `resources/${filename}.pdf`,
     displayHeaderFooter: true,
     footerTemplate: `<p style="font-size: 10px; width: 100%; padding: 10px 0px 0px; margin: 0px 50px; font-family:'Source Sans Pro'; border-top: 1px solid black;">
         <span style="float: left;">${title}</span>

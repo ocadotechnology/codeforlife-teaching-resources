@@ -22,7 +22,7 @@ For more infomation on why we are doing this, please the corresponding [feature 
     yarn install
     ```
 
-1. **Get an API key for our Contentful instance and Puppeteer credentials**
+2. **Get an API key for our Contentful instance and Puppeteer credentials**
 
     Contact @code-for-life on Slack to get an API key for the Contentful instance and Auth0 credentials for Puppeteer, and put them in a file called `.env.development`
 
@@ -33,7 +33,7 @@ For more infomation on why we are doing this, please the corresponding [feature 
     echo "PUPPETEER_PASSWORD=[your_puppeteer_password_here]" > .env.development
     ```
 
-1.  **Start the server**
+3.  **Start the server**
 
     Navigate into your new site’s directory and start it up.
 
@@ -42,7 +42,25 @@ For more infomation on why we are doing this, please the corresponding [feature 
     yarn start
     ```
 
-1.  **Open the source code and start editing!**
+## Generating PDFs
+
+After making changes on contentful, then generate the PDFs with: (run on a different shell)
+
+```shell
+node generatePDFs.js
+```
+
+The PDFs will be generated into the `resources` folder.
+
+Create the zip of all the files in the folder named `kurono.zip`.
+
+These then need to be uploaded to [google cloud](https://console.cloud.google.com/storage/browser/codeforlife-assets). The files need to be made public (Edit permissions > Add entry > Public > Save).
+
+Update the links on [portal](https://github.com/ocadotechnology/codeforlife-portal) as necessary. 
+
+## Editing Gatsby
+
+**Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
@@ -50,7 +68,7 @@ For more infomation on why we are doing this, please the corresponding [feature 
 
     Open the `codeforlife-teaching-resources` directory in your code editor of choice and start editing. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+### 🧐 What's inside?
 
 A quick look at the top-level files and directories you'll see in a Gatsby project.
 
